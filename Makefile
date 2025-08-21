@@ -1,2 +1,2 @@
-# Specific Makefile for the project
+# Specific Makefile for the project {{PROJECT_NAME}}
 include Makefile.common
