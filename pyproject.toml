@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "Project Name"
+version = "0.1.0"
+description = "Description"
+authors = ["Author Name"]
+readme = "README.md"
+package-mode = false 
+
+[tool.poetry.dependencies]
+python = "^3.12,<3.14"
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+mypy = "^1.16.1"
+pytest = "^8.4.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

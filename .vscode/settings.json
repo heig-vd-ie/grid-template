@@ -1,0 +1,54 @@
+{
+  "terminal.integrated.commandsToSkipShell": [
+    "workbench.action.toggleSidebarVisibility",
+    "-workbench.action.quickOpen",
+  ],
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled":true,
+  "terminal.integrated.env.osx": {
+    "PYTHONPATH": "${workspaceFolder}/src",
+  },
+  "terminal.integrated.env.linux": {
+    "PYTHONPATH": "${workspaceFolder}/src",
+  },
+  "terminal.integrated.env.windows": {
+    "PYTHONPATH": "${workspaceFolder}/src",
+  },
+  "terminal.integrated.fontSize": 12,
+  "explorer.autoReveal": false,
+  "workbench.action.terminal.setDimension": 1000,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "python.analysis.extraPaths": [
+    "src/"
+  ],
+  "python.analysis.autoImportCompletions": true,
+  "jupyter.notebookFileRoot": "${workspaceFolder}/src",
+  "pylint.args": [
+    "--max-line-length=450",
+    "--max-module-lines=10000",
+  ],
+  "python.analysis.typeCheckingMode": "basic",
+  "editor.defaultFormatter": "ms-python.black-formatter",
+  "autoDocstring.docstringFormat": "numpy",
+  "jupyter.runStartupCommands": ["direnv allow ."],
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "python.formatting.provider": "black",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "files.exclude": {
+    "**/__pycache__": true
+  },
+  "julia.editor.formatOnSave": true,
+  "julia.editor.formatOnType": true,
+  "[julia]": {
+      "editor.defaultFormatter": "julialang.language-julia",
+      "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "GamemodeOne.json-compact-prettier",
+    "editor.formatOnSave": true
+  },
+}
