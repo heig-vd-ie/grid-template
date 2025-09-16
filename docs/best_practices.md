@@ -1,6 +1,10 @@
 
 <h1 align="center">
+    <br>
     Git & Python Best Practices
+    <img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="Python" width="40" height="40">
+    &nbsp;
+    <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" width="40" height="40">
 </h1>
 
 ## tl;dr
