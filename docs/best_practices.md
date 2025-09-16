@@ -1,9 +1,7 @@
 
-# 🐍 Git & Python Best Practices 🐙
-
-<p align="center">
-    <img src="https://github.blog/wp-content/uploads/2023/02/python-growing.png?w=1032" width="220" alt="Git fun"/>
-</p>
+<h1 align="center">
+    Git & Python Best Practices
+</h1>
 
 ## tl;dr
 
