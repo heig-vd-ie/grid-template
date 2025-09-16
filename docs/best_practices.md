@@ -18,10 +18,20 @@
 
 ## Repository Organization
 
+- Prefer a single repository for each project, especially if you are working solo. This keeps things simple and avoids confusion.
+- Only consider splitting into multiple repositories if you have a large team and clear separation between project parts (e.g., backend vs frontend).
 - Source code in `/src`, tests in `/tests`, examples in `/examples`
 - Document dependencies in `pyproject.toml` or `requirements.txt`
 - Use [`git-lfs`](https://git-lfs.github.com/) for large files
 - Protect `main`/`master` branches ([branch protection](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/using-branch-protection-rules))
+
+
+## Main Branch & Versioning
+
+- The `main` branch is the single source of truth. All code should be merged here.
+- Avoid opening many branches at once—keep your branch structure simple and focused.
+- Use feature branches for specific changes, and delete them after merging.
+- Keep your version history clean by using [tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) for releases instead of long-lived branches.
 
 ## Daily Workflow
 
