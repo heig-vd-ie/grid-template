@@ -26,10 +26,14 @@ detect-env: ## Detect whether running in WSL or native Linux
 	fi
 
 install-pipx: ## Install pipx (Python packaging tool)
-	@echo "Installing pipx..."
-	sudo apt update
-	sudo apt install -y pipx
-	pipx ensurepath --force
+	@read -p "This will install pipx and its dependencies. Continue? [y/N] " answer; \
+	if [ "$$answer" = "y" ] || [ "$$answer" = "Y" ]; then \
+		sudo apt update; \
+		sudo apt install -y pipx; \
+		pipx ensurepath --force; \
+	else \
+		echo "Skipped installing dependencies."; \
+	fi
 
 install-python-wsl: ## Install Python $(PYTHON_VERSION) and venv support on WSL
 	@echo "Checking if Python $(PYTHON_VERSION) is installed..."
@@ -49,8 +53,13 @@ install-poetry: ## Install Poetry using pipx
 
 install-deps: ## Install system dependencies
 	@echo "Installing system dependencies..."
-	sudo apt update
-	sudo apt install -y libpq-dev gcc python3-dev build-essential direnv
+	@read -p "This will install system dependencies (libpq-dev gcc python3-dev build-essential direnv). Continue? [y/N] " answer; \
+	if [ "$$answer" = "y" ] || [ "$$answer" = "Y" ]; then \
+		sudo apt update; \
+		sudo apt install -y libpq-dev gcc python3-dev build-essential direnv; \
+	else \
+		echo "Skipped installing dependencies."; \
+	fi
 
 _venv: ## Create a virtual environment if it doesn't exist
 	@echo "Creating virtual environment with Python $(PYTHON_VERSION)..."
@@ -78,6 +87,7 @@ venv-activate-and-poetry-use-install: SHELL:=/bin/bash
 venv-activate-and-poetry-use-install: ## Activate venv and install packages
 	@echo "Activating virtual environment and installing packages..."
 	@test -d .venv || make _venv
+	@rm -f poetry.lock || true
 	@bash --rcfile <(echo '. ~/.bashrc; . .venv/bin/activate; echo "You are now in a subshell with venv activated."; make poetry-use; make poetry-install; . scripts/enable-direnv.sh') -i
 
 install-vscode-extensions: ## Install Visual Studio Code extensions
