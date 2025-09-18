@@ -2,9 +2,12 @@
 name = "{{PROJECT_NAME}}"
 version = "0.1.0"
 description = "Description"
-authors = ["{{AUTHOR}}"]
+authors = ["AUTHOR NAME <EMAIL_ADDRESS>"]
 readme = "README.md"
-package-mode = false 
+
+package-mode = false
+# or uncomment it and do the following
+# packages = [{ include = "{{PROJECT_NAME}}", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.12,<3.14"
@@ -13,6 +16,8 @@ python = "^3.12,<3.14"
 black = "^25.1.0"
 mypy = "^1.16.1"
 pytest = "^8.4.1"
+# ext_dep = {path = "external-dist/external-repo-0.1.0-py3-none-any.whl", optional = true}
+
 
 [build-system]
 requires = ["poetry-core"]
@@ -20,3 +25,4 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.extras]
 internal = []
+# internal = ["ext_dep"]
