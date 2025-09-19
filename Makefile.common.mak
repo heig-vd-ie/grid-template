@@ -121,10 +121,6 @@ run-tests-py: ## [file] Run tests using pytest (check venv is activated otherwis
 		PYTHONWARNINGS=ignore $(VENV_DIR)/bin/python -m pytest tests/ -v;\
 	fi
 
-format-julia:  ## Format Julia code in the src directory
-	@echo "Formatting Julia code with JuliaFormatter..."
-	julia -e 'using JuliaFormatter; format("src/")'
-
 format-py: ## Format Python code using black
 	@echo "Formatting Python code with black..."
 	@poetry run black .
@@ -136,3 +132,7 @@ build-wheel: # Build the Python wheel for this project based on pyproject.toml v
 fetch-wheel: ## Fetch the Python wheel from a remote URL [<organization> <repo> <name-of-wheel> <version> <dest_dir>]
 	@echo "Fetching Python wheel..."
 	@bash scripts/fetch-wheel.sh $(ORG) $(REPO) $(BRANCH) $(VERSION) $(DEST_DIR)
+
+lint: ## Lint the code using pylint
+	@echo "Linting Python code with pylint..."
+	@poetry run pylint --rcfile .pylintrc **/*.py
