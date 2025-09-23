@@ -16,13 +16,12 @@ black = "^25.9.0"
 pytest = "^8.4.2"
 pre-commit = "^4.3.0"
 pylint = "^3.3.8"
+# ext_dep = {path = "external-dist/external-repo-0.1.0-py3-none-any.whl", optional = true}
 
 [tool.poetry.group.dev.dependencies]
 black = "^25.1.0"
 mypy = "^1.16.1"
 pytest = "^8.4.1"
-# ext_dep = {path = "external-dist/external-repo-0.1.0-py3-none-any.whl", optional = true}
-
 
 [build-system]
 requires = ["poetry-core"]
