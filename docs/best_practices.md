@@ -25,7 +25,7 @@
 - Source code in `/src`, tests in `/tests`, examples in `/examples`
 - Document dependencies in `pyproject.toml` or `requirements.txt`
 - Use [`git-lfs`](https://git-lfs.github.com/) for large files
-- Protect `main`/`master` branches ([branch protection](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/using-branch-protection-rules))
+- Protect `main`/`master` branches ([branch protection](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule))
 
 
 ## Main Branch & Versioning
