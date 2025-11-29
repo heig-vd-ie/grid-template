@@ -1,13 +1,13 @@
 [tool.poetry]
-name = "{{PROJECT_NAME}}"
+name = "GridTemplate"
 version = "0.1.0"
 description = "Description"
-authors = ["AUTHOR NAME <EMAIL_ADDRESS>"]
+authors = ["mohammad rayati <mohammad.rayati@heig-vd.ch>"]
 readme = "README.md"
 
 package-mode = false
 # or uncomment it and do the following
-# packages = [{ include = "{{PROJECT_NAME}}", from = "src" }]
+# packages = [{ include = "GridTemplate", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.12,<3.14"
