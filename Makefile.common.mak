@@ -98,7 +98,6 @@ install-all:  ## Install all dependencies and set up the environment
 	@$(MAKE) install-python-wsl
 	@$(MAKE) install-poetry
 	@$(MAKE) install-deps
-	@$(MAKE) install-vscode-extensions
 	@$(MAKE) _venv
 	@$(MAKE) venv-activate-and-poetry-use-install
 	@echo "All dependencies installed successfully!"
