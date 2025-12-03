@@ -25,7 +25,8 @@ git push                  # push local commits to remote
 git merge <branch>        # merge another branch into current one
 git rebase <branch>       # reapply commits on top of another branch
 
-git reset --hard HEAD~n     # discard all local changes (careful!)
+git reset --soft HEAD~n   # return back the changes into stage mode
+git reset --hard HEAD~n   # discard all local changes (careful!)
 
-git cherry-pick <commit>   # apply a specific commit
+git cherry-pick <commit>  # apply a specific commit
 ```
