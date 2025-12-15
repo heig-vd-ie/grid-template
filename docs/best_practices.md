@@ -26,9 +26,10 @@
 - [x] README.md for onboarding new team members into the project -> [guide](https://richardsondx.medium.com/step-by-step-guide-to-writing-better-documentation-to-improve-developer-onboarding-376a4a9181d).
 - [x] Prefer a single repository for each project, especially if you are working solo. This keeps things simple and avoids confusion. Only consider splitting into multiple repositories if you have a large team and clear separation between project parts (e.g., backend vs frontend).
 - [x] Provide a [Makefile](../Makefile.common.mak) to standardize common commands. Include targets such as install-all for environment setup, lint, test, and build to give new team members a single entry point for routine tasks.
-- [ ] Remove or archive old, unused, or deprecated projects in github
-- [ ] Source code in `/src`, tests in `/tests`, examples or experiments in `/experiments`
-- [ ] Document dependencies in `pyproject.toml` or `requirements.txt`
+- [x] Remove or archive old, unused, or deprecated projects in github.
+- [x] Source code in `/src`, tests in `/tests`, examples or experiments in `/experiments`.
+- [x] Document dependencies in `pyproject.toml` or `requirements.txt`.
+- [ ] Fill governance form in each project ([here](governance.md)).
 - [ ] Protect `main`/`master` branches if more than one person works on the same project ([branch protection](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule)).
 - [ ] Optional: Use [`git-lfs`](https://git-lfs.github.com/) for large files
 
