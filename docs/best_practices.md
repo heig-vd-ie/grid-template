@@ -23,9 +23,9 @@
 
 ## Repository Organization
 
-- [ ] README.md for onboarding new team members into the project -> [guide](https://richardsondx.medium.com/step-by-step-guide-to-writing-better-documentation-to-improve-developer-onboarding-376a4a9181d).
+- [x] README.md for onboarding new team members into the project -> [guide](https://richardsondx.medium.com/step-by-step-guide-to-writing-better-documentation-to-improve-developer-onboarding-376a4a9181d).
 - [x] Prefer a single repository for each project, especially if you are working solo. This keeps things simple and avoids confusion. Only consider splitting into multiple repositories if you have a large team and clear separation between project parts (e.g., backend vs frontend).
-- [ ] Provide a [Makefile](../Makefile.common.mak) to standardize common commands. Include targets such as install-all for environment setup, lint, test, and build to give new team members a single entry point for routine tasks.
+- [x] Provide a [Makefile](../Makefile.common.mak) to standardize common commands. Include targets such as install-all for environment setup, lint, test, and build to give new team members a single entry point for routine tasks.
 - [ ] Remove or archive old, unused, or deprecated projects in github
 - [ ] Source code in `/src`, tests in `/tests`, examples or experiments in `/experiments`
 - [ ] Document dependencies in `pyproject.toml` or `requirements.txt`
@@ -46,6 +46,7 @@
 - [ ] Delete merged branches
 - [ ] Tag releases for tracking ([tagging guide](https://git-scm.com/book/en/v2/Git-Basics-Tagging))
 - [ ] Never force-push shared branches
+- [ ] Optional: Use pre-commit hooks for formatting & linting
 
 ## Coding Standards & Tooling
 
@@ -78,8 +79,6 @@
 - [x] Use feature branches, keep `main` or `master` clean
 - [x] Commit small, focused changes often
 - [x] Write clear commit messages ([how-to](https://www.conventionalcommits.org/en/v1.0.0/))
-- [ ] Exclude large files ([.gitignore guide](https://git-scm.com/docs/gitignore))
 - [x] Always add unit tests for new code (test-driven development -> [guide](https://medium.com/@muirujackson/python-test-driven-development-6235c479baa2))
-- [ ] Optional: Use pre-commit hooks for formatting & linting
 
 ---
