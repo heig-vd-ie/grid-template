@@ -83,7 +83,7 @@ venv-activate-and-poetry-use-install: ## Activate venv and install packages
 	@echo "Activating virtual environment and installing packages..."
 	@test -d .venv || make _venv
 	@rm -f poetry.lock || true
-	@bash --rcfile <(echo '. ~/.bashrc; . .venv/bin/activate; echo "You are now in a subshell with venv activated."; make poetry-use; make poetry-install; . scripts/enable-direnv.sh') -i
+	@bash --rcfile <(echo '. ~/.bashrc; . .venv/bin/activate; echo "You are now in a subshell with venv activated."; make poetry-use; make poetry-install; make nbstripout-install; . scripts/enable-direnv.sh') -i
 
 install-vscode-extensions: ## Install Visual Studio Code extensions
 	@echo "Installing Visual Studio Code extensions..."
@@ -130,3 +130,7 @@ fetch-wheel: ## Fetch the Python wheel from a remote URL [<organization> <repo> 
 lint: ## Lint the code using pylint
 	@echo "Linting Python code with pylint..."
 	@poetry run pylint --rcfile .pylintrc **/*.py
+
+nbstripout-install:
+	@echo "Installing nbstripout git filter..."
+	nbstripout --install
