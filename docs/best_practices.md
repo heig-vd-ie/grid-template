@@ -29,9 +29,9 @@
 - [x] Remove or archive old, unused, or deprecated projects in github.
 - [x] Source code in `/src`, tests in `/tests`, examples or experiments in `/experiments`.
 - [x] Document dependencies in `pyproject.toml` or `requirements.txt`.
-- [ ] Fill governance form in each project ([here](governance.md)).
-- [ ] Protect `main`/`master` branches if more than one person works on the same project ([branch protection](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule)).
-- [ ] Optional: Use [`git-lfs`](https://git-lfs.github.com/) for large files
+- [x] Fill governance form in each project ([here](governance.md)).
+- [x] Protect `main`/`master` branches if more than one person works on the same project ([branch protection](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule)).
+- [x] Optional: Use [`git-lfs`](https://git-lfs.github.com/) for large files
 
 ## Main Branch & Versioning
 
@@ -47,7 +47,7 @@
 - [x] Delete merged branches
 - [x] Tag releases for tracking ([tagging guide](https://git-scm.com/book/en/v2/Git-Basics-Tagging))
 - [x] Never force-push shared branches
-- [x] Optional: Use pre-commit hooks for formatting & linting
+- [x] Optional: Use pre-commit hooks for formatting & linting [example1](https://codilime.com/blog/python-code-quality-linters/) and [example2](https://www.jumpingrivers.com/blog/python-linting-guide/)
 
 ## Coding Standards & Tooling
 
