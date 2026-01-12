@@ -38,21 +38,21 @@
 - [x] The `main/master` branch is the single source of truth. All code should be merged here.
 - [x] Avoid opening many branches at once, keep your branch structure simple and focused.
 - [x] Use feature branches for specific changes, and delete them after merging.
-- [ ] Keep your version history clean by using [tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) for releases instead of long-lived branches.
-- [ ] Use the branch names like `feat/xxx-xxx`, `fix/xxx-xxx`, `refactore/xxx-xxx`, `docs/xxx-xxx`, etc. to folder the branches.
+- [x] Keep your version history clean by using [tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) for releases instead of long-lived branches.
+- [x] Use the branch names like `feat/xxx-xxx`, `fix/xxx-xxx`, `refactore/xxx-xxx`, `docs/xxx-xxx`, etc. to folder the branches.
 
 ## Daily Workflow
 
-- [ ] `git pull` before work, `git push` after
-- [ ] Delete merged branches
-- [ ] Tag releases for tracking ([tagging guide](https://git-scm.com/book/en/v2/Git-Basics-Tagging))
-- [ ] Never force-push shared branches
-- [ ] Optional: Use pre-commit hooks for formatting & linting
+- [x] `git pull` before work, `git push` after
+- [x] Delete merged branches
+- [x] Tag releases for tracking ([tagging guide](https://git-scm.com/book/en/v2/Git-Basics-Tagging))
+- [x] Never force-push shared branches
+- [x] Optional: Use pre-commit hooks for formatting & linting
 
 ## Coding Standards & Tooling
 
 - [ ] Follow [PEP8](https://peps.python.org/pep-0008/) for style. For that, use [Black](https://black.readthedocs.io/en/stable/) for formatting, Lint with [pylint](https://pylint.pycqa.org/) or [flake8](https://flake8.pycqa.org/).
-- [ ] Optional: Use [pre-commit](https://pre-commit.com/) for hooks
+- [x] Optional: Use [pre-commit](https://pre-commit.com/) for hooks
 - [ ] For notebooks, use [nbstripout](https://github.com/kynan/nbstripout) and spell checkers
 - [ ] Interactive scripts: [argparse](https://docs.python.org/3/library/argparse.html) or [click](https://click.palletsprojects.com/)
 - [ ] AI???
