@@ -7,6 +7,15 @@
     <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" width="40" height="40">
 </h1>
 
+## tl;dr
+
+- [x] Use feature branches, keep `main` or `master` clean
+- [x] Commit small, focused changes often
+- [x] Write clear commit messages ([how-to](https://www.conventionalcommits.org/en/v1.0.0/))
+- [x] Always add unit tests for new code (test-driven development -> [guide](https://medium.com/@muirujackson/python-test-driven-development-6235c479baa2))
+
+---
+
 ## Git commands
 
 - [x] Quick start: skim the cheat-sheet in [here](git_commands.md) for the essentials. If curiosity (or FOMO) strikes, dive into the full deep‑dive: [here](REP_Course_GitGitlab_v1-1-2.pdf).
@@ -71,13 +80,3 @@
 - [Writing good commit messages](https://github.com/erlang/otp/wiki/Writing-good-commit-messages)
 - [Python Guidelines](https://ssciwr.github.io/guidelines/python/)
 - [GitHub Best Practice](https://widdowquinn.github.io/github-best-practice/)
-
-
-## tl;dr
-
-- [x] Use feature branches, keep `main` or `master` clean
-- [x] Commit small, focused changes often
-- [x] Write clear commit messages ([how-to](https://www.conventionalcommits.org/en/v1.0.0/))
-- [x] Always add unit tests for new code (test-driven development -> [guide](https://medium.com/@muirujackson/python-test-driven-development-6235c479baa2))
-
----
