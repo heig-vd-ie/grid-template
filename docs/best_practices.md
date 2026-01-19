@@ -53,7 +53,7 @@
 
 - [x] Optional: Use [pre-commit](https://pre-commit.com/) for hooks
 - [x] For notebooks, use [nbstripout](https://github.com/kynan/nbstripout) and spell checkers
-- [ ] - [ ] Follow [PEP8](https://peps.python.org/pep-0008/) for style. For that, use [Black](https://black.readthedocs.io/en/stable/) for formatting, Lint with [pylint](https://pylint.pycqa.org/)/ [flake8](https://flake8.pycqa.org/)/[Ruff](https://docs.astral.sh/ruff/), and type checker with [mypy](https://mypy.readthedocs.io/en/stable/) (Read [Three friends of the better code style](https://makimo.com/blog/three-friends-of-the-better-code-style-python/)).
+- [ ] Follow [PEP8](https://peps.python.org/pep-0008/) for style. For that, use [Black](https://black.readthedocs.io/en/stable/) for formatting, Lint with [pylint](https://pylint.pycqa.org/)/ [flake8](https://flake8.pycqa.org/)/[Ruff](https://docs.astral.sh/ruff/), and type checker with [mypy](https://mypy.readthedocs.io/en/stable/) (Read [Three friends of the better code style](https://makimo.com/blog/three-friends-of-the-better-code-style-python/)).
 - [ ] Interactive scripts: [argparse](https://docs.python.org/3/library/argparse.html) or [click](https://click.palletsprojects.com/)
 
 ## Recommended Technologies
