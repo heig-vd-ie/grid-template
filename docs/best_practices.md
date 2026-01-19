@@ -51,18 +51,16 @@
 
 ## Coding Standards & Tooling
 
-- [ ] Follow [PEP8](https://peps.python.org/pep-0008/) for style. For that, use [Black](https://black.readthedocs.io/en/stable/) for formatting, Lint with [pylint](https://pylint.pycqa.org/) or [flake8](https://flake8.pycqa.org/).
 - [x] Optional: Use [pre-commit](https://pre-commit.com/) for hooks
-- [ ] For notebooks, use [nbstripout](https://github.com/kynan/nbstripout) and spell checkers
+- [x] For notebooks, use [nbstripout](https://github.com/kynan/nbstripout) and spell checkers
+- [ ] - [ ] Follow [PEP8](https://peps.python.org/pep-0008/) for style. For that, use [Black](https://black.readthedocs.io/en/stable/) for formatting, Lint with [pylint](https://pylint.pycqa.org/)/ [flake8](https://flake8.pycqa.org/)/[Ruff](https://docs.astral.sh/ruff/), and type checker with [mypy](https://mypy.readthedocs.io/en/stable/) (Read [Three friends of the better code style](https://makimo.com/blog/three-friends-of-the-better-code-style-python/)).
 - [ ] Interactive scripts: [argparse](https://docs.python.org/3/library/argparse.html) or [click](https://click.palletsprojects.com/)
-- [ ] AI???
 
 ## Recommended Technologies
 
-- [ ] Version control: GitHub / GitLab
 - [ ] Testing: [pytest](https://docs.pytest.org/) / [unittest](https://docs.python.org/3/library/unittest.html)
-- [ ] Docs: [Sphinx](https://www.sphinx-doc.org/), [MkDocs](https://www.mkdocs.org/)
 - [ ] CI: [GitHub Actions](https://github.com/features/actions)
+- [ ] Docs: [Sphinx](https://www.sphinx-doc.org/), [MkDocs](https://www.mkdocs.org/)
 - [ ] Docs hosting: [ReadTheDocs](https://readthedocs.org/), [GitHub Pages](https://pages.github.com/)
 
 ## Useful Links
