@@ -63,14 +63,14 @@
 - [x] Optional: Use [pre-commit](https://pre-commit.com/) for hooks
 - [x] For notebooks, use [nbstripout](https://github.com/kynan/nbstripout) and spell checkers
 - [ ] Follow [PEP8](https://peps.python.org/pep-0008/) for style. For that, use [Black](https://black.readthedocs.io/en/stable/) for formatting, Lint with [pylint](https://pylint.pycqa.org/)/ [flake8](https://flake8.pycqa.org/)/[Ruff](https://docs.astral.sh/ruff/), and type checker with [mypy](https://mypy.readthedocs.io/en/stable/) (Read [Three friends of the better code style](https://makimo.com/blog/three-friends-of-the-better-code-style-python/)).
-- [ ] Interactive scripts: [argparse](https://docs.python.org/3/library/argparse.html) or [click](https://click.palletsprojects.com/)
+- [x] Interactive scripts: [argparse](https://docs.python.org/3/library/argparse.html) or [click](https://click.palletsprojects.com/)
 
 ## Recommended Technologies
 
-- [ ] Testing: [pytest](https://docs.pytest.org/) / [unittest](https://docs.python.org/3/library/unittest.html)
-- [ ] CI: [GitHub Actions](https://github.com/features/actions)
-- [ ] Docs: [Sphinx](https://www.sphinx-doc.org/), [MkDocs](https://www.mkdocs.org/)
-- [ ] Docs hosting: [ReadTheDocs](https://readthedocs.org/), [GitHub Pages](https://pages.github.com/)
+- [x] Testing: [pytest](https://docs.pytest.org/) / [unittest](https://docs.python.org/3/library/unittest.html)
+- [x] CI: [GitHub Actions](https://github.com/features/actions)
+- [x] Docs: [Sphinx](https://www.sphinx-doc.org/), [MkDocs](https://www.mkdocs.org/)
+- [x] Docs hosting: [ReadTheDocs](https://readthedocs.org/), [GitHub Pages](https://pages.github.com/)
 
 ## Useful Links
 
