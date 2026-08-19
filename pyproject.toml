@@ -1,33 +1,32 @@
-[tool.poetry]
+[project]
 name = "GridTemplate"
 version = "0.1.0"
 description = "Description"
-authors = ["mohammad rayati <mohammad.rayati@heig-vd.ch>"]
+authors = [{name = "mohammad rayati", email = "mohammad.rayati@heig-vd.ch"}]
 readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "isort>=6.0.1",
+    "black>=25.9.0",
+    "pytest>=8.4.2",
+    "pre-commit>=4.3.0",
+    "pylint>=3.3.8",
+    "nbstripout>=0.8.2",
+]
 
-package-mode = false
-# or uncomment it and do the following
-# packages = [{ include = "GridTemplate", from = "src" }]
-
-[tool.poetry.dependencies]
-python = "^3.12,<3.14"
-isort = "^6.0.1"
-black = "^25.9.0"
-pytest = "^8.4.2"
-pre-commit = "^4.3.0"
-pylint = "^3.3.8"
-# ext_dep = {path = "external-dist/external-repo-0.1.0-py3-none-any.whl", optional = true}
-nbstripout = "^0.8.2"
-
-[tool.poetry.group.dev.dependencies]
-black = "^25.1.0"
-mypy = "^1.16.1"
-pytest = "^8.4.1"
+[project.optional-dependencies]
+dev = [
+    "black>=25.1.0",
+    "mypy>=1.16.1",
+    "pytest>=8.4.1",
+]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[tool.poetry.extras]
-internal = []
-# internal = ["ext_dep"]
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.uv]
+# uv-specific configuration can be added here if needed

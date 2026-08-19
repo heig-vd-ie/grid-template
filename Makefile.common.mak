@@ -30,6 +30,16 @@ install-pipx: ## Install pipx (Python packaging tool)
 		echo "Skipped installing dependencies."; \
 	fi
 
+install-uv: ## Install uv (fast Python package manager)
+	@echo "Checking if uv is installed..."
+	@if ! command -v uv >/dev/null 2>&1; then \
+		echo "Installing uv..."; \
+		curl -LsSf https://astral.sh/uv/install.sh | sh; \
+	else \
+		echo "uv is already installed"; \
+		uv --version; \
+	fi
+
 install-python-wsl: ## Install Python $(PYTHON_VERSION) and venv support on WSL
 	@echo "Checking if Python $(PYTHON_VERSION) is installed..."
 	@if ! command -v python$(PYTHON_VERSION) >/dev/null 2>&1; then \
@@ -60,6 +70,11 @@ _venv: ## Create a virtual environment if it doesn't exist
 	@echo "Creating virtual environment with Python $(PYTHON_VERSION)..."
 	python$(PYTHON_VERSION) -m venv .venv
 
+_uv-venv: ## Create a virtual environment using uv
+	@echo "Creating virtual environment using uv..."
+	@command -v uv >/dev/null 2>&1 || (echo "uv is not installed. Run 'make install-uv' first."; exit 1)
+	uv venv .venv --python $(PYTHON_VERSION)
+
 venv-activate: SHELL:=/bin/bash
 venv-activate: ## enter venv in a subshell
 	@test -d .venv || make _venv
@@ -78,12 +93,34 @@ poetry-install: ## Update Python packages using Poetry
 		exit 1 \
 	)
 
+uv-install: ## Install Python packages using uv
+	@echo "Installing Python packages using uv..."
+	@command -v uv >/dev/null 2>&1 || (echo "uv is not installed. Run 'make install-uv' first."; exit 1)
+	uv pip install -e .
+
+uv-sync: ## Sync dependencies using uv
+	@echo "Syncing Python packages using uv..."
+	@command -v uv >/dev/null 2>&1 || (echo "uv is not installed. Run 'make install-uv' first."; exit 1)
+	uv sync --extra dev
+
 venv-activate-and-poetry-use-install: SHELL:=/bin/bash
 venv-activate-and-poetry-use-install: ## Activate venv and install packages
 	@echo "Activating virtual environment and installing packages..."
 	@test -d .venv || make _venv
 	@rm -f poetry.lock || true
 	@bash --rcfile <(echo '. ~/.bashrc; . .venv/bin/activate; echo "You are now in a subshell with venv activated."; make poetry-use; make poetry-install; make nbstripout-install; . scripts/enable-direnv.sh') -i
+
+uv-venv-setup: SHELL:=/bin/bash
+uv-venv-setup: ## Setup venv and install packages using uv
+	@echo "Setting up virtual environment and installing packages with uv..."
+	@test -d .venv || make _uv-venv
+	@bash --rcfile <(echo '. ~/.bashrc; . .venv/bin/activate; echo "You are now in a subshell with uv venv activated."; make uv-sync; make nbstripout-install; . scripts/enable-direnv.sh') -i
+
+venv-activate-and-uv-install: SHELL:=/bin/bash
+venv-activate-and-uv-install: ## Activate venv and install packages using uv (non-interactive)
+	@echo "Activating virtual environment and installing packages with uv..."
+	@test -d .venv || make _uv-venv
+	@. .venv/bin/activate && make uv-sync && make nbstripout-install
 
 install-vscode-extensions: ## Install Visual Studio Code extensions
 	@echo "Installing Visual Studio Code extensions..."
@@ -101,6 +138,14 @@ install-all:  ## Install all dependencies and set up the environment
 	@$(MAKE) _venv
 	@$(MAKE) venv-activate-and-poetry-use-install
 	@echo "All dependencies installed successfully!"
+
+install-all-uv: ## Install all dependencies and set up the environment using uv
+	@$(MAKE) install-uv
+	@$(MAKE) install-python-wsl
+	@$(MAKE) install-deps
+	@$(MAKE) _uv-venv
+	@$(MAKE) venv-activate-and-uv-install
+	@echo "All dependencies installed successfully with uv!"
 
 uninstall-venv: ## Uninstall the virtual environment
 	@echo "Uninstalling virtual environment..."
