@@ -30,3 +30,8 @@ packages = ["src"]
 
 [tool.uv]
 # uv-specific configuration can be added here if needed
+
+[tool.poetry]
+# Poetry only manages the venv/dependencies here; the project itself isn't
+# installed as a package (no src/<package_name> layout exists yet).
+package-mode = false

@@ -86,7 +86,7 @@ poetry-use: ## Install Python packages using Poetry
 
 poetry-install: ## Update Python packages using Poetry
 	@echo "Updating Python packages using Poetry..."
-	@poetry install --extras "internal" || ( \
+	@poetry install --extras "dev" || ( \
 		echo "⚠️ If psycopg-c installation fails, see:"; \
 		echo "https://stackoverflow.com/questions/77727508/problem-installing-psycopg2-for-python-venv-through-poetry"; \
 		echo "Error hint: _psycopg-c may not support PEP 517 builds or may be missing system dependencies."; \
@@ -138,6 +138,15 @@ install-all: ## Install all dependencies and set up the environment using uv
 	@$(MAKE) _uv-venv
 	@$(MAKE) venv-activate-and-uv-install
 	@echo "All dependencies installed successfully with uv!"
+
+install-all-poetry: ## Install all dependencies and set up the environment using Poetry
+	@$(MAKE) install-pipx
+	@$(MAKE) install-python-wsl
+	@$(MAKE) install-poetry
+	@$(MAKE) install-deps
+	@$(MAKE) _venv
+	@$(MAKE) venv-activate-and-poetry-use-install
+	@echo "All dependencies installed successfully with Poetry!"
 
 uninstall-venv: ## Uninstall the virtual environment
 	@echo "Uninstalling virtual environment..."
