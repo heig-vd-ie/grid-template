@@ -4,6 +4,8 @@ PYTHON_VERSION := 3.12
 VENV_DIR := .venv
 ORG := heig-vd-ie
 
+UNAME_S := $(shell uname -s)
+
 # Default target: help
 .DEFAULT_GOAL := help
 
@@ -13,8 +15,10 @@ help: ## Show this help message
 		sort | \
 		awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-42s\033[0m %s\n", $$1, $$2}'
 
-detect-env: ## Detect whether running in WSL or native Linux
-	@if grep -qEi "(Microsoft|WSL)" /proc/version; then \
+detect-env: ## Detect macOS, WSL or native Linux
+	@if [ "$(UNAME_S)" = "Darwin" ]; then \
+		echo "Detected: macOS (Darwin)"; \
+	elif grep -qEi "(Microsoft|WSL)" /proc/version 2>/dev/null; then \
 		echo "Detected: WSL environment"; \
 	else \
 		echo "Detected: Native Linux environment"; \
@@ -51,6 +55,13 @@ install-python-wsl: ## Install Python $(PYTHON_VERSION) and venv support on WSL
 	else \
 		echo "Python $(PYTHON_VERSION) already installed"; \
 	fi
+
+install-python-uv: ## Install and pin Python 3.12 via uv (macOS, Linux, WSL)
+	@echo "Installing Python $(PYTHON_VERSION) through uv..."
+	@command -v uv >/dev/null 2>&1 || (echo "uv is not installed. Run 'make install-uv' first."; exit 1)
+	uv python install $(PYTHON_VERSION)
+	uv python pin $(PYTHON_VERSION)
+	@echo "Pinned to $(PYTHON_VERSION) in .python-version, used by uv venv, uv sync and uv run."
 
 install-poetry: ## Install Poetry using pipx
 	@echo "Installing Poetry..."
@@ -103,6 +114,26 @@ uv-sync: ## Sync dependencies using uv
 	@command -v uv >/dev/null 2>&1 || (echo "uv is not installed. Run 'make install-uv' first."; exit 1)
 	uv sync --extra dev
 
+uv-run-tests-py: ## [file] Run tests using uv run pytest (no activation needed)
+	@echo "Running Python tests with uv..."
+	@if [ -n "$(file)" ]; then \
+		PYTHONWARNINGS=ignore uv run pytest "$(file)" -v; \
+	else \
+		PYTHONWARNINGS=ignore uv run pytest tests/ -v; \
+	fi
+
+uv-format-py: ## Format Python code with black using uv
+	@echo "Formatting Python code with black via uv..."
+	@uv run black .
+
+uv-lint: ## Lint code with pylint using uv
+	@echo "Linting Python code with pylint via uv..."
+	@uv run --with pylint pylint --rcfile .pylintrc **/*.py
+
+uv-build-wheel: ## Build the Python wheel using uv
+	@echo "Building Python wheel using uv..."
+	@uv build --wheel
+
 venv-activate-and-poetry-use-install: SHELL:=/bin/bash
 venv-activate-and-poetry-use-install: ## Activate venv and install packages
 	@echo "Activating virtual environment and installing packages..."
@@ -147,6 +178,13 @@ install-all-poetry: ## Install all dependencies and set up the environment using
 	@$(MAKE) _venv
 	@$(MAKE) venv-activate-and-poetry-use-install
 	@echo "All dependencies installed successfully with Poetry!"
+
+install-all-macos: ## Install all dependencies and set up the environment on macOS (uv only)
+	@$(MAKE) install-uv
+	@$(MAKE) install-python-uv
+	@$(MAKE) venv-activate-and-uv-install
+	@echo "All dependencies installed successfully with uv on macOS!"
+	@echo "Enter the environment with 'make venv-activate', then register the Jupyter kernel (docs/install_macos.md)."
 
 uninstall-venv: ## Uninstall the virtual environment
 	@echo "Uninstalling virtual environment..."
