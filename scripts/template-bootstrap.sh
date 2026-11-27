@@ -9,8 +9,9 @@ AUTHOR="${AUTHOR:?AUTHOR is required}"                     # creator's GitHub lo
 EMAIL="${EMAIL:-${AUTHOR}@users.noreply.github.com}"
 TODAY="$(date +%Y-%m-%d)"
 
-# README: set the title and author, strip the template markers, and drop the
-# "How to Run" (Use this template) section, which is irrelevant after creation.
+# README: remove the template badge, set the title and author, strip the template
+# markers, and drop the "How to Run" (Use this template) section, now irrelevant.
+sed -i '/<!-- template-badge:start -->/,/<!-- template-badge:end -->/d' README.md
 sed -i \
   -e "1s|^# .*|# ${PROJECT_NAME}|" \
   -e "s|^Author:.*|Author: ${AUTHOR}|" \

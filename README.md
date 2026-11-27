@@ -1,3 +1,9 @@
+<!-- template-badge:start -->
+[![Template](https://img.shields.io/badge/%F0%9F%93%90_template-psrl--template-blue)](https://github.com/heig-vd-ie/psrl-template)
+
+> This repository is a template. Click **Use this template** to start a new project — this badge is removed automatically on the first push.
+<!-- template-badge:end -->
+
 # PSRL-Template (Replace the name)
 
 Author: Mohammad Rayati (Replace the name)
