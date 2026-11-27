@@ -34,7 +34,7 @@
 
 - [x] README.md for onboarding new team members into the project -> [guide](https://richardsondx.medium.com/step-by-step-guide-to-writing-better-documentation-to-improve-developer-onboarding-376a4a9181d).
 - [x] Prefer a single repository for each project, especially if you are working solo. This keeps things simple and avoids confusion. Only consider splitting into multiple repositories if you have a large team and clear separation between project parts (e.g., backend vs frontend).
-- [x] Provide a [Makefile](../Makefile.common.mak) to standardize common commands. Include targets such as `make install-all` for environment setup, `make test`, `make check` (lint & format via pre-commit) and `make build-wheel`, to give new team members a single entry point for routine tasks.
+- [x] Provide a [Makefile](../../scripts/Makefile.common.mak) to standardize common commands. Include targets such as `make install-all` for environment setup, `make test`, `make check` (lint & format via pre-commit) and `make build-wheel`, to give new team members a single entry point for routine tasks.
 - [x] Remove or archive old, unused, or deprecated projects in github.
 - [x] Source code in `/src`, tests in `/tests`.
 - [x] Document dependencies in `pyproject.toml` or `requirements.txt`.
