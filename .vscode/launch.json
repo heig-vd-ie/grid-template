@@ -6,20 +6,11 @@
             "type": "debugpy",
             "request": "launch",
             "module": "pytest",
-            "args": [
-                "${file}",
-                "-v",
-                "-s"
-            ],
+            "args": ["${file}", "-v", "-s"],
             "console": "integratedTerminal",
             "justMyCode": false,
             "env": {
-                "PYTHONPATH": "${workspaceFolder}/src",
-                "GRB_LICENSE_FILE": "${env:HOME}/gurobi_license/gurobi.lic",
-                "NUMBA_DISABLE_JIT": "1",
-                "NUMBA_CACHE_DIR": "/tmp/numba_cache",
-                "NUMBA_DISABLE_CACHE": "1",
-                "SERVER_PORT": "8080"
+                "PYTHONPATH": "${workspaceFolder}/src${pathSeparator}${workspaceFolder}"
             },
             "cwd": "${workspaceFolder}"
         },
@@ -28,20 +19,11 @@
             "type": "debugpy",
             "request": "launch",
             "module": "pytest",
-            "args": [
-                "tests/",
-                "-v",
-                "-s"
-            ],
+            "args": ["tests/", "-v", "-s"],
             "console": "integratedTerminal",
             "justMyCode": false,
             "env": {
-                "PYTHONPATH": "${workspaceFolder}/src",
-                "GRB_LICENSE_FILE": "${env:HOME}/gurobi_license/gurobi.lic",
-                "NUMBA_DISABLE_JIT": "1",
-                "NUMBA_CACHE_DIR": "/tmp/numba_cache",
-                "NUMBA_DISABLE_CACHE": "1",
-                "SERVER_PORT": "8080"
+                "PYTHONPATH": "${workspaceFolder}/src${pathSeparator}${workspaceFolder}"
             },
             "cwd": "${workspaceFolder}"
         },
@@ -50,22 +32,11 @@
             "type": "debugpy",
             "request": "launch",
             "module": "pytest",
-            "args": [
-                "${workspaceFolder}/tests/",
-                "-k",
-                "${input:testName}",
-                "-v",
-                "-s"
-            ],
+            "args": ["${workspaceFolder}/tests/", "-k", "${input:testName}", "-v", "-s"],
             "console": "integratedTerminal",
             "justMyCode": false,
             "env": {
-                "PYTHONPATH": "${workspaceFolder}/src",
-                "GRB_LICENSE_FILE": "${env:HOME}/gurobi_license/gurobi.lic",
-                "NUMBA_DISABLE_JIT": "1",
-                "NUMBA_CACHE_DIR": "/tmp/numba_cache",
-                "NUMBA_DISABLE_CACHE": "1",
-                "SERVER_PORT": "8080"
+                "PYTHONPATH": "${workspaceFolder}/src${pathSeparator}${workspaceFolder}"
             },
             "cwd": "${workspaceFolder}"
         }
