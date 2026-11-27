@@ -1,4 +1,10 @@
-# Grid-Template (Replace the name)
+<!-- template-badge:start -->
+[![Template](https://img.shields.io/badge/%F0%9F%93%90_template-psrl--template-blue)](https://github.com/heig-vd-ie/psrl-template)
+
+> This repository is a template. Click **Use this template** to start a new project — this badge is removed automatically on the first push.
+<!-- template-badge:end -->
+
+# PSRL-Template (Replace the name)
 
 Author: Mohammad Rayati (Replace the name)
 
@@ -12,7 +18,7 @@ Describe your project here:
 - Who is it for?  
 - What problem does it solve?  
 
-This repository provides a clean starting point with standard tooling for Python-based research and development projects at the Institute of Energies (Power Systems Group).  
+This repository provides a clean starting point with standard tooling for Python-based research and development projects at the Institute of Energies (Power Systems Research Laboratory).  
 
 ---
 
@@ -22,9 +28,8 @@ This repository provides a clean starting point with standard tooling for Python
 - Makefile automation for development workflows  
 - Virtual environment setup and dependency management  
 - Environment-variable handling  
-- Predefined folder structure for `src`, `tests`, `docs`, `scripts`, `experiments`, and `data`  
+- Predefined folder structure for `src`, `tests`, `docs`, and `scripts`  
 - Optional integration with recommended Git & Python best practices  
-- Zero magic, zero surprises (well almost)
 
 ---
 
@@ -34,34 +39,14 @@ This repository provides a clean starting point with standard tooling for Python
 2. Select **“Create new repository”**, name your project, and choose where to host it.  
 3. Clone your new repository locally.
 
+On the first push, a one-time workflow fills in your project name and author, resets the changelog, strips this template scaffolding, removes the group reference docs (`docs/best-practices/`, the install guides stay), and then removes itself.
+
 ---
 
 ## Installation & Setup (Replace this section)
 
-1. Install `make` (if not already installed): 
-```sh
-    sudo apt update
-    sudo apt install make
-```
+`make install-all` sets the project up the same way on macOS, Linux and WSL. See
+[`docs/install/`](docs/install/README.md) for prerequisites, the day-to-day commands,
+and the pre-commit hooks & CI.
 
-2. Initialize the project and create the virtual environment: 
-```sh
-    make install-all # if something fails, try to debug, if not working, raise an issue or contact someone
-    make venv-activate
-```
-
-3. If you delete your `.venv`, you can run `make install-all` to install everything from beginning.
-
-For recommended Git and Python best practices, refer to [here](docs/best_practices.md).
-
----
-
-## Remarks
-
-This template currently works on Linux-based systems (including WSL).
-On macOS, some Makefile targets may not work.
-To see all available Makefile commands, simply run: 
-```sh
-    make
-```
-Or open the Makefile directly to see what’s going on under the hood.
+For recommended Git and Python best practices, refer to [here](docs/best-practices/README.md).

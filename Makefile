@@ -1,5 +1,5 @@
 # Specific Makefile for the project {{PROJECT_NAME}}
-include Makefile.common.mak
+include scripts/Makefile.common.mak
 
 # EXT_REPO_NAME := repo_name
 # EXT_BRANCH := main

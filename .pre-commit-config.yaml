@@ -1,28 +1,16 @@
 repos:
-  - repo: local
+  - repo: https://github.com/PyCQA/isort
+    rev: 6.0.1
     hooks:
-      # disable make-test for now, as it is too slow
-      # - id: make-test
-      #   name: Run Make test
-      #   entry: make run-tests-py
-      #   language: system
-      #   files: "^.*"   # only run if files under api/ changed
-      #   stages: [] 
-
       - id: isort
-        name: Run isort on API
-        entry: isort .
-        language: system
-        files: '^.*\.py$'
 
+  - repo: https://github.com/psf/black
+    rev: 25.9.0
+    hooks:
       - id: black
-        name: Run Black on API
-        entry: black
-        language: system
-        files: '^.*\.py$'
 
-      - id: lint
-        name: Run pylint on API
-        entry: make lint
-        language: system
-        files: "^.*"
+  - repo: https://github.com/pylint-dev/pylint
+    rev: v3.3.8
+    hooks:
+      - id: pylint
+        args: ["--rcfile=.pylintrc"]

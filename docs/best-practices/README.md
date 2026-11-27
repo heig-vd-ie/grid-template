@@ -24,9 +24,6 @@
 
 - [x] Why do we need it? https://www.hackerone.com/blog/why-you-should-use-pull-requests-developers-essential-tool
 - [x] How to do that? See https://www.youtube.com/watch?v=nCKdihvneS0.
-- [x] Write clear commit messages ([how-to](https://www.conventionalcommits.org/en/v1.0.0/))
-- [x] Commit small, focused changes often
-- [x] Always add unit tests for new code (test-driven development -> [guide](https://medium.com/@muirujackson/python-test-driven-development-6235c479baa2))
 
 ---
 
@@ -34,9 +31,9 @@
 
 - [x] README.md for onboarding new team members into the project -> [guide](https://richardsondx.medium.com/step-by-step-guide-to-writing-better-documentation-to-improve-developer-onboarding-376a4a9181d).
 - [x] Prefer a single repository for each project, especially if you are working solo. This keeps things simple and avoids confusion. Only consider splitting into multiple repositories if you have a large team and clear separation between project parts (e.g., backend vs frontend).
-- [x] Provide a [Makefile](../Makefile.common.mak) to standardize common commands. Include targets such as install-all for environment setup, lint, test, and build to give new team members a single entry point for routine tasks.
+- [x] Provide a [Makefile](../../scripts/Makefile.common.mak) to standardize common commands. Include targets such as `make install-all` for environment setup, `make test`, `make check` (lint & format via pre-commit) and `make build-wheel`, to give new team members a single entry point for routine tasks.
 - [x] Remove or archive old, unused, or deprecated projects in github.
-- [x] Source code in `/src`, tests in `/tests`, examples or experiments in `/experiments`.
+- [x] Source code in `/src`, tests in `/tests`.
 - [x] Document dependencies in `pyproject.toml` or `requirements.txt`.
 - [x] Fill governance form in each project ([here](governance.md)).
 - [x] Protect `main`/`master` branches if more than one person works on the same project ([branch protection](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule)).
