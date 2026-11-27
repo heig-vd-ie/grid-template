@@ -64,4 +64,4 @@ notes, see [`docs/install/`](docs/install/README.md).
 | Build the wheel | `make build-wheel` |
 | List every command | `make` |
 
-For recommended Git and Python best practices, refer to [here](docs/best_practices.md).
+For recommended Git and Python best practices, refer to [here](docs/best-practices/README.md).
