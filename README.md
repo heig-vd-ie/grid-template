@@ -1,4 +1,4 @@
-# Grid-Template (Replace the name)
+# PSRL-Template (Replace the name)
 
 Author: Mohammad Rayati (Replace the name)
 
@@ -12,7 +12,7 @@ Describe your project here:
 - Who is it for?  
 - What problem does it solve?  
 
-This repository provides a clean starting point with standard tooling for Python-based research and development projects at the Institute of Energies (Power Systems Group).  
+This repository provides a clean starting point with standard tooling for Python-based research and development projects at the Institute of Energies (Power Systems Research Laboratory).  
 
 ---
 
