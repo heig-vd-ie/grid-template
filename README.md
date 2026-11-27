@@ -40,32 +40,8 @@ On the first push, a one-time workflow fills in your project name and author, re
 
 ## Installation & Setup (Replace this section)
 
-The same `make install-all` works on macOS, Linux and WSL. For per-OS prerequisites and
-notes, see [`docs/install/`](docs/install/README.md).
-
-1. Install `make` if you don't have it:
-   - **Linux / WSL:** `sudo apt update && sudo apt install make`
-   - **macOS:** `xcode-select --install` (ships `make`, `git` and `clang`)
-
-2. Install everything and create the virtual environment — the same command on macOS, Linux and WSL:
-```sh
-    make install-all
-    make venv-activate
-```
-`make install-all` installs `uv`, a managed Python 3.12, the dependencies and the git hooks. If it fails, debug it, or raise an issue / contact someone.
-
-3. If you delete your `.venv`, run `make install-all` again to rebuild it.
-
-### Common commands
-
-| Task | Command |
-| :--- | :--- |
-| Enter the environment | `make venv-activate` (`exit` to leave) |
-| Run the tests | `make test` (or `make test file=tests/test_example.py`) |
-| Run the lint & format hooks | `make check` |
-| Build the wheel | `make build-wheel` |
-| List every command | `make` |
-
-Pre-commit hooks and CI are covered in [`docs/install/`](docs/install/README.md#pre-commit-hooks--ci).
+`make install-all` sets the project up the same way on macOS, Linux and WSL. See
+[`docs/install/`](docs/install/README.md) for prerequisites, the day-to-day commands,
+and the pre-commit hooks & CI.
 
 For recommended Git and Python best practices, refer to [here](docs/best-practices/README.md).
