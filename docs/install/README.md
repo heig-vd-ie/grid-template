@@ -18,3 +18,31 @@ Once the setup is done, the day-to-day commands are identical everywhere:
 | Build the wheel | `make build-wheel` |
 | Remove the environment | `make uninstall-venv` |
 | List every command | `make` |
+
+## Pre-commit hooks & CI
+
+**Pre-commit** runs `isort`, `black` and `pylint` locally on the files you stage,
+before each commit. **CI** (GitHub Actions) runs the test suite with `pytest` on
+Ubuntu and macOS on every push and pull request. Configs: `.pre-commit-config.yaml`,
+`.github/workflows/ci.yml`.
+
+### Pre-commit (local)
+
+| Task | Command |
+| :--- | :--- |
+| Activate the hooks | `make install-hooks` (also run by `make install-all`) |
+| Run the hooks manually on all files | `make check` |
+| Skip the hooks for **one** commit | `git commit --no-verify` |
+| Deactivate the hooks completely | `uv run pre-commit uninstall` |
+
+Re-activate any time with `make install-hooks`. The hooks also update when you edit
+`.pre-commit-config.yaml` — rerun `make check` to apply the new config.
+
+### CI (GitHub Actions)
+
+CI runs automatically on GitHub; there is nothing to activate locally. To change or
+disable it, edit `.github/workflows/ci.yml`:
+
+- **Disable entirely:** delete the file, or rename it to `ci.yml.disabled`.
+- **Run on fewer events:** narrow the `on:` line (e.g. `on: [pull_request]`).
+- **Drop an OS:** remove it from the `matrix.os` list.
