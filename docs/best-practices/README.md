@@ -24,9 +24,6 @@
 
 - [x] Why do we need it? https://www.hackerone.com/blog/why-you-should-use-pull-requests-developers-essential-tool
 - [x] How to do that? See https://www.youtube.com/watch?v=nCKdihvneS0.
-- [x] Write clear commit messages ([how-to](https://www.conventionalcommits.org/en/v1.0.0/))
-- [x] Commit small, focused changes often
-- [x] Always add unit tests for new code (test-driven development -> [guide](https://medium.com/@muirujackson/python-test-driven-development-6235c479baa2))
 
 ---
 
