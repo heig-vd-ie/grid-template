@@ -38,30 +38,30 @@ This repository provides a clean starting point with standard tooling for Python
 
 ## Installation & Setup (Replace this section)
 
-1. Install `make` (if not already installed): 
-```sh
-    sudo apt update
-    sudo apt install make
-```
+The same `make install-all` works on macOS, Linux and WSL. For per-OS prerequisites and
+notes, see [`docs/install/`](docs/install/README.md).
 
-2. Initialize the project and create the virtual environment: 
+1. Install `make` if you don't have it:
+   - **Linux / WSL:** `sudo apt update && sudo apt install make`
+   - **macOS:** `xcode-select --install` (ships `make`, `git` and `clang`)
+
+2. Install everything and create the virtual environment — the same command on macOS, Linux and WSL:
 ```sh
-    make install-all # if something fails, try to debug, if not working, raise an issue or contact someone
+    make install-all
     make venv-activate
 ```
+`make install-all` installs `uv`, a managed Python 3.12, the dependencies and the git hooks. If it fails, debug it, or raise an issue / contact someone.
 
-3. If you delete your `.venv`, you can run `make install-all` to install everything from beginning.
+3. If you delete your `.venv`, run `make install-all` again to rebuild it.
+
+### Common commands
+
+| Task | Command |
+| :--- | :--- |
+| Enter the environment | `make venv-activate` (`exit` to leave) |
+| Run the tests | `make test` (or `make test file=tests/test_example.py`) |
+| Run the lint & format hooks | `make check` |
+| Build the wheel | `make build-wheel` |
+| List every command | `make` |
 
 For recommended Git and Python best practices, refer to [here](docs/best_practices.md).
-
----
-
-## Remarks
-
-This template currently works on Linux-based systems (including WSL).
-On macOS, some Makefile targets may not work.
-To see all available Makefile commands, simply run: 
-```sh
-    make
-```
-Or open the Makefile directly to see what’s going on under the hood.
