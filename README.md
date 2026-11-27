@@ -22,7 +22,7 @@ This repository provides a clean starting point with standard tooling for Python
 - Makefile automation for development workflows  
 - Virtual environment setup and dependency management  
 - Environment-variable handling  
-- Predefined folder structure for `src`, `tests`, `docs`, `scripts`, `experiments`, and `data`  
+- Predefined folder structure for `src`, `tests`, `docs`, and `scripts`  
 - Optional integration with recommended Git & Python best practices  
 - Zero magic, zero surprises (well almost)
 
