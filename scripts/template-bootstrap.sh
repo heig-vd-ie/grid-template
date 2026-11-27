@@ -43,6 +43,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Initial project generated from the psrl-template.
 EOF
 
+# Remove the template-only reference docs (group best practices) and its README link.
+# The per-OS install guides under docs/install/ are kept, they apply to every project.
+rm -rf docs/best-practices
+sed -i '/docs\/best-practices\//d' README.md
+
 # Remove the bootstrap itself so it runs only once.
 rm -f .github/workflows/template-bootstrap.yml scripts/template-bootstrap.sh
 

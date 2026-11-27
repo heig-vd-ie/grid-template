@@ -34,7 +34,7 @@ This repository provides a clean starting point with standard tooling for Python
 2. Select **“Create new repository”**, name your project, and choose where to host it.  
 3. Clone your new repository locally.
 
-On the first push, a one-time workflow fills in your project name and author, resets the changelog, strips this template scaffolding, and then removes itself.
+On the first push, a one-time workflow fills in your project name and author, resets the changelog, strips this template scaffolding, removes the group reference docs (`docs/best-practices/`, the install guides stay), and then removes itself.
 
 ---
 
